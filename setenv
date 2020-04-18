@@ -1,10 +1,11 @@
 #!/bin/bash
 
-
 # change this to the directory of where you built rustc for xtensa
-CUSTOM_RUSTC=/home/mabez/development/rust/xtensa/rust-xtensa
+XTENSA_RUSTC=/Users/hanhossain/Developer/github/rust-xtensa
+TARGET_TRIPLE=x86_64-apple-darwin
 
 export RUST_BACKTRACE=1 
-export XARGO_RUST_SRC=$CUSTOM_RUSTC/src 
-export RUSTC=$CUSTOM_RUSTC/build/x86_64-unknown-linux-gnu/stage2/bin/rustc
-export RUSTDOC=$CUSTOM_RUSTC/build/x86_64-unknown-linux-gnu/stage2/bin/rustdoc
+export XARGO_RUST_SRC=$XTENSA_RUSTC/src 
+export RUSTC=$XTENSA_RUSTC/build/$TARGET_TRIPLE/stage2/bin/rustc
+export RUSTDOC=$XTENSA_RUSTC/build/$TARGET_TRIPLE/stage2/bin/rustdoc
+export PATH=$PATH:$HOME/esp/xtensa-esp32-elf/bin%
